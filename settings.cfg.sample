@@ -1,0 +1,16 @@
+import os
+
+DEBUG = True
+
+FLASK_YEOMAN_DEBUG = int(os.environ.get('FLASK_YEOMAN_DEBUG', False))
+
+SLUSH_TOKEN = ''
+
+LINKS = (('Slush\'s Pool', 'https://mining.bitcoin.cz/accounts/profile/'),
+         ('Slush forum', 'http://www.bitcointalk.org/index.php?topic=1976.999999999'),
+         ('#mining.bitcoin.cz', 'http://webchat.freenode.net/?channels=mining.bitcoin.cz&prompt=1'),
+         ('/r/bitcoinmining', 'http://www.reddit.com/r/bitcoinmining'),
+         ('/r/bitcoin', 'http://www.reddit.com/r/bitcoin'),
+         )
+
+CURRENCIES = ['USD', 'EUR']

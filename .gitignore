@@ -1,0 +1,8 @@
+node_modules
+dist
+test/temp
+settings.cfg
+.sass-cache
+app/bower_components
+.tmp
+test/bower_components/
