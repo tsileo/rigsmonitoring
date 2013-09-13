@@ -5,7 +5,8 @@ window.rigsmonitoring =
   Routers: {}
   init: ->
     'use strict'
-    new @Views.TickerView model: new @Models.TickerModel
+    @ticker = new @Views.TickerView model: new @Models.TickerModel
+    @slush = new @Views.SlushView model: new @Models.SlushModel
 
 $ ->
   'use strict'

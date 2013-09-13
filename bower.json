@@ -6,7 +6,9 @@
     "jquery": "~1.9.0",
     "underscore": "~1.4.3",
     "backbone": "~1.0.0",
-    "modernizr": "~2.6.2"
+    "modernizr": "~2.6.2",
+    "visibility.core.js": "https://raw.github.com/ai/visibility.js/master/lib/visibility.core.js",
+    "visibility.timers.js": "https://raw.github.com/ai/visibility.js/master/lib/visibility.timers.js"
   },
   "devDependencies": {}
 }

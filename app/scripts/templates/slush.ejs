@@ -1,2 +1,85 @@
-<p>Your content here.</p>
+<div class="row">
+<div class="col-md-5">
 
+<div class="panel panel-default">
+  <div class="panel-heading">Profile</div>
+  <ul class="list-group">
+    <li class="list-group-item">Hashrate: <strong><%= profile.hashrate %></strong> Mhash/s</li>
+    <li class="list-group-item">Total reward: <strong><%= profile.total_reward %></strong> BTC</li>
+    <li class="list-group-item">Confirmed reward: <strong><%= profile.confirmed_reward %></strong> BTC</li>
+    <li class="list-group-item">Unconfirmed reward: <strong><%= profile.unconfirmed_reward %></strong> BTC</li>
+  </ul>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">Workers</div>  
+  <div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Alive</th>
+        <th>Mhash/s</th>
+        <th>Last share</th>
+      </tr>
+    <thead>
+    <tbody>
+      <% _.each(profile.workers, function(worker) { %>
+      <tr>
+        <td><%= worker.name %></td>
+        <td><%= worker.alive %></td>
+        <td><%= worker.hashrate %></td>
+        <td><%= worker.last_share %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Links</div>
+  <ul class="list-group">
+<% _.each(window.rigsmonitoring.config.links, function(link) { %>
+    <li class="list-group-item"><a href="<%= link[1] %>"><%= link[0] %></a></li>
+<% }); %>
+  </ul>
+</div> 
+
+
+
+</div>
+<div class="col-md-7">
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">Rounds</div>
+  <div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Block #</th>
+        <th>Found at</th>
+        <th>Duration</th>
+        <th>BTC reward</th>
+        <th>Confirmation</th>
+      </tr>
+    <thead>
+    <tbody>
+      <% _.each(rounds, function(block) { %>
+      <tr>
+        <td><a href="https://blockchain.info/search/<%= block.id %>"><%= block.id %></a></td>
+        <td><%=  block.date_found %></td>
+        <td><%= block.mining_duration %></td>
+        <td><%= block.reward %></td>
+        <td><%= block.confirmations %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+
+</div></div>
