@@ -16,21 +16,28 @@
         <!-- endbuild -->
     </head>
     <body>
-    <div id="ticker"></div>
-        <div class="container">
-            <div class="hero-unit">
-                <h1>'Allo, 'Allo!</h1>
-                <p>You now have</p>
-                <ul>
-                    <li>Twitter Bootstrap</li>
-                    <li>HTML5 Boilerplate</li>
-                    <li>jQuery</li>
-                    <li>Backbone.js</li>
-                    <li>Underscore.js</li>
-                </ul>
-                <p>installed.</p>
-                <h3>Enjoy coding! - Yeoman</h3>
+   
+           <div class="container">
+
+        
+        <div class="row">
+            <div class="col-md-7">
+                <h1>Rigs Monitoring</h1>
             </div>
+            <div class="col-md-5">
+            <div style="padding:20px 20px 20px 0;color:#999;" class="pull-left">
+                Last miner update: <br /><strong style="color:#333;" id="last-api-update"></strong>
+            </div>
+            <div style="padding:20px 20px 20px 0;color:#999;" class="pull-left">
+                Last ticker update: <br /><strong style="color:#333;" id="last-ticker-update"></strong>
+            </div>
+            </div>
+        </div>
+        <div class="row">
+  <section id="slush" class="col-md-10"></section>
+  <section id="ticker" class="col-md-2"></section>
+
+  </div>
         </div>
 
         <!--[if lt IE 7]>
@@ -66,6 +73,11 @@
         <script src="scripts/views/slush.js"></script>
         <script src="scripts/views/ticker.js"></script>
         <!-- endbuild -->
+
+        <script>
+        window.rigsmonitoring.config = {links: {{ config.LINKS|tojson }},
+                                        currencies: {{ config.CURRENCIES|tojson }}};
+        </script>
 
         {% if config.FLASK_YEOMAN_DEBUG %}
         <!-- livereload script -->

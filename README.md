@@ -1,8 +1,11 @@
 # Rigs Monitoring
 
-[Slush's pool](https://mining.bitcoin.cz/)
+Self-hosted monitoring dashboard for your mining rigs ([Bitcoin](http://bitcoin.org/) mining) written with [Python](http://python.org/) and [CoffeeScript](http://coffeescript.org/) with [Yeoman](http://yeoman.io/) and [Backbone](http://backbonejs.org/).
 
-[Exchange Rates API from Blockchain](https://blockchain.info/api/exchange_rates_api)
+## Features
+
+- Mining info from [Slush's pool](https://mining.bitcoin.cz/)
+- [Exchange Rates API from Blockchain](https://blockchain.info/api/exchange_rates_api)
 
 ## Installation
 

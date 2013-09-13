@@ -1,2 +1,15 @@
-<p>Your content here.</p>
-
+<div class="row">
+<% _.each(window.rigsmonitoring.config.currencies, function(cur) { %>
+<div class="col-md-12">
+<div class="panel panel-default">
+  <div class="panel-heading">Ticker <%= cur %></div>
+  <ul class="list-group">
+  <% curr = ticker[cur]; %>
+<% _.each(ticker[cur], function(cur, index) { %>
+    <li class="list-group-item"><%= index %>: <strong><%= cur %></strong></li>
+<% }); %>
+  </ul>
+</div> 
+</div> 		
+<% }); %>
+</div>

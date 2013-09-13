@@ -5,9 +5,8 @@ window.rigsmonitoring =
   Routers: {}
   init: ->
     'use strict'
-    console.log 'Hello from Backbone!'
-    new @Views.TickerView
+    new @Views.TickerView model: new @Models.TickerModel
 
 $ ->
   'use strict'
-  rigsmonitoring.init();
+  rigsmonitoring.init()
