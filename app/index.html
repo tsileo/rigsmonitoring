@@ -21,10 +21,13 @@
 
         
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <h1>Rigs Monitoring</h1>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-8">
+            <div style="padding:20px 20px 20px 0;color:#999;" class="pull-left">
+                Last cgminer update: <br /><strong style="color:#333;" id="last-cgminer-update"></strong>
+            </div>
             <div style="padding:20px 20px 20px 0;color:#999;" class="pull-left">
                 Last miner update: <br /><strong style="color:#333;" id="last-api-update"></strong>
             </div>
@@ -34,6 +37,7 @@
             </div>
         </div>
         <div class="row">
+  <section id="cgminer" class="col-md-12"></section>
   <section id="slush" class="col-md-10"></section>
   <section id="ticker" class="col-md-2"></section>
 
@@ -74,6 +78,8 @@
         <script src="scripts/models/ticker.js"></script>
         <script src="scripts/views/slush.js"></script>
         <script src="scripts/views/ticker.js"></script>
+        <script src="scripts/models/cgminer.js"></script>
+        <script src="scripts/views/cgminer.js"></script>
         <!-- endbuild -->
 
         <script>

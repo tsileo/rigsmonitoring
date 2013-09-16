@@ -1,0 +1,35 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Devices</div>
+  <div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Temperature</th>
+        <th>MHS av</th>
+        <th>MHS 5s</th>
+        <th>Accepted</th>
+        <th>Rejected</th>
+        <th>Device Rejected%</th>
+        <th>Hardware Errors</th>
+      </tr>
+    <thead>
+    <tbody>
+      <% _.each(devs, function(dev) { %>
+      <tr>
+        <td><%= dev.Name %></td>
+        <td><%= dev.Status %></td>
+        <td><%= dev.Temperature %></td>
+        <td><%= dev['MHS av'] %></td>
+        <td><%= dev['MHS 5s'] %></td>
+        <td><%= dev.Accepted %></td>
+        <td><%= dev.Rejected %></td>
+        <td><%= dev['Device Rejected%'] %></td>
+        <td><%= dev['Hardware Errors'] %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  </div>
+</div>

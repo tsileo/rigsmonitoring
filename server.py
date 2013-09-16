@@ -1,10 +1,14 @@
+from datetime import datetime
+import requests
+
+from pycgminer import CgminerAPI
+
 from flask import Flask, jsonify
 from flask.ext.cache import Cache
 
 from flask_yeoman import flask_yeoman
 
-from datetime import datetime
-import requests
+cgminer = CgminerAPI()
 
 app = Flask(__name__, static_folder='app')
 cache = Cache(app, config={'CACHE_TYPE': 'filesystem', 'CACHE_DIR': '/tmp/'})
@@ -46,6 +50,12 @@ def api_rounds_model():
 
     return jsonify(rounds=sorted(blocks, key=lambda x: x['id'], reverse=True)[:20],
                    profile=_get_profile())
+
+
+@app.route('/api/cgminer/devs')
+def cgminer_devs():
+    return jsonify(devs=cgminer.devs()['DEVS'])
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
