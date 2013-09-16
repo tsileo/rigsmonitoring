@@ -1,8 +1,8 @@
 import os
 
-DEBUG = True
+PORT = 5000
 
-FLASK_YEOMAN_DEBUG = int(os.environ.get('FLASK_YEOMAN_DEBUG', False))
+DEBUG = FLASK_YEOMAN_DEBUG = int(os.environ.get('FLASK_YEOMAN_DEBUG', False))
 
 SLUSH_TOKEN = ''
 
