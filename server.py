@@ -36,7 +36,7 @@ def _get_profile():
     return profile
 
 
-@app.route("/api/slush/")
+@app.route('/api/slush/')
 @cache.cached(timeout=70)
 def api_rounds_model():
     r = requests.get('https://mining.bitcoin.cz/stats/json/{0}'.format(app.config['SLUSH_TOKEN']),
@@ -50,6 +50,13 @@ def api_rounds_model():
 
     return jsonify(rounds=sorted(blocks, key=lambda x: x['id'], reverse=True)[:20],
                    profile=_get_profile())
+
+
+@app.route('/api/btc_guild/')
+def api_btc_guild():
+    r = requests.get('https://www.btcguild.com/api.php', params={'api_key': app.config['BTC_GUILD_API_KEY']})
+    r.raise_for_status()
+    return jsonify(data=r.json())
 
 
 @app.route('/api/cgminer/devs')
