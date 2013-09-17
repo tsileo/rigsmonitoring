@@ -26,7 +26,7 @@ $ vim settings.cfg
 $ python server.py
 ```
 
-For development, ``grunt server`` will automatically spawn a develoment server.
+For development, ``grunt server`` will automatically spawn a development server.
 
 ```console
 $ grunt server
